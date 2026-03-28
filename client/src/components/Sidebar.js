@@ -51,7 +51,7 @@ export default function Sidebar({ onClose }) {
           </div>
           <div style={{minWidth:0,flex:1}}>
             <div style={{fontSize:13,fontWeight:600}}>CryptX</div>
-            <div style={{fontSize:10,color:"var(--text2)",fontFamily:"'JetBrains Mono',monospace"}}>Team CYBER-IV-T073</div>
+            <div style={{fontSize:10,color:"var(--text2)",fontFamily:"'JetBrains Mono',monospace"}}>Made by Ayush</div>
           </div>
         </div>
       </div>
