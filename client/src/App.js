@@ -1,6 +1,6 @@
 // client/src/App.js
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
 import Dashboard    from "./pages/Dashboard";
@@ -10,7 +10,7 @@ import HistoryPage  from "./pages/HistoryPage";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Toaster
         position="top-right"
         toastOptions={{
@@ -34,6 +34,6 @@ export default function App() {
         <Route path="/history"   element={<HistoryPage />} />
         <Route path="*"          element={<Navigate to="/" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
