@@ -1,0 +1,173 @@
+/* client/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg:       #07090f;
+  --bg2:      #0c0f1a;
+  --surface:  #111520;
+  --surf2:    #171d30;
+  --border:   #1e2847;
+  --border2:  #283460;
+  --accent:   #4f8eff;
+  --green:    #00e5b0;
+  --red:      #ff4d6d;
+  --gold:     #ffb340;
+  --purple:   #a78bfa;
+  --text:     #e8eeff;
+  --text2:    #8899cc;
+  --muted:    #3d4f7a;
+  --r:        12px;
+  --r-sm:     8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* ── Background ─────────────────────────────── */
+.app-bg {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 90% 60% at 10% -5%,  rgba(79,142,255,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 105%,  rgba(0,229,176,0.06) 0%, transparent 55%),
+    var(--bg);
+}
+
+.grid-bg {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(79,142,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,142,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Cards ──────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79,142,255,0.25), transparent);
+}
+
+/* ── Buttons ─────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 20px; border: none; border-radius: var(--r-sm);
+  font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all 0.18s; white-space: nowrap; text-decoration: none;
+}
+.btn:disabled { opacity: 0.45; cursor: not-allowed !important; transform: none !important; box-shadow: none !important; }
+
+.btn-primary  { background: linear-gradient(135deg,#3266cc,var(--accent)); color:#fff; box-shadow:0 4px 20px rgba(79,142,255,.22); }
+.btn-primary:hover:not(:disabled)  { transform:translateY(-2px); box-shadow:0 8px 28px rgba(79,142,255,.35); }
+
+.btn-green    { background: linear-gradient(135deg,#009e80,var(--green)); color:#07090f; box-shadow:0 4px 20px rgba(0,229,176,.18); }
+.btn-green:hover:not(:disabled)    { transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,229,176,.3); }
+
+.btn-red      { background: linear-gradient(135deg,#cc2244,var(--red)); color:#fff; }
+.btn-red:hover:not(:disabled)      { transform:translateY(-2px); }
+
+.btn-ghost    { background:transparent; color:var(--text2); border:1px solid var(--border); }
+.btn-ghost:hover:not(:disabled)    { background:var(--surf2); color:var(--text); border-color:var(--border2); }
+
+.btn-lg  { padding:13px 28px; font-size:15px; border-radius:var(--r); }
+.btn-sm  { padding:6px 14px;  font-size:13px; }
+.btn-xs  { padding:4px 10px;  font-size:11px; }
+.btn-full{ width:100%; }
+
+/* ── Forms ───────────────────────────────────── */
+.form-group { margin-bottom: 18px; }
+.label {
+  display: block; margin-bottom: 7px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text2);
+  font-family: 'JetBrains Mono', monospace;
+}
+.input {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: 12px 16px;
+  color: var(--text); font-family: 'Outfit', sans-serif; font-size: 14px;
+  outline: none; transition: border-color .2s, box-shadow .2s;
+}
+.input:focus  { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,142,255,.12); }
+.input.err    { border-color: var(--red); }
+.input::placeholder { color: var(--muted); }
+.hint  { font-size:12px; color:var(--text2); margin-top:5px; font-family:'JetBrains Mono',monospace; }
+.ferr  { font-size:12px; color:var(--red);   margin-top:5px; }
+.fok   { font-size:12px; color:var(--green); margin-top:5px; }
+
+/* ── Alerts ──────────────────────────────────── */
+.alert { display:flex; gap:10px; align-items:flex-start; padding:12px 16px; border-radius:var(--r-sm); font-size:13px; line-height:1.5; }
+.alert-err  { background:rgba(255,77,109,.09);  border:1px solid rgba(255,77,109,.25); color:#ff8099; }
+.alert-ok   { background:rgba(0,229,176,.08);   border:1px solid rgba(0,229,176,.22);  color:var(--green); }
+.alert-info { background:rgba(79,142,255,.08);  border:1px solid rgba(79,142,255,.22); color:#7eb0ff; }
+.alert-warn { background:rgba(255,179,64,.08);  border:1px solid rgba(255,179,64,.22); color:var(--gold); }
+
+/* ── Badges ──────────────────────────────────── */
+.badge { display:inline-flex; align-items:center; gap:5px; padding:3px 10px; border-radius:100px; font-size:11px; font-weight:600; font-family:'JetBrains Mono',monospace; }
+.badge-blue  { background:rgba(79,142,255,.14);  color:#7eb0ff;       border:1px solid rgba(79,142,255,.28); }
+.badge-green { background:rgba(0,229,176,.09);   color:var(--green);  border:1px solid rgba(0,229,176,.22); }
+.badge-red   { background:rgba(255,77,109,.09);  color:#ff8099;       border:1px solid rgba(255,77,109,.22); }
+.badge-gold  { background:rgba(255,179,64,.09);  color:var(--gold);   border:1px solid rgba(255,179,64,.22); }
+.badge-purple{ background:rgba(167,139,250,.1);  color:var(--purple); border:1px solid rgba(167,139,250,.25); }
+
+/* ── Progress ─────────────────────────────────── */
+.progress-wrap { background:var(--bg2); border:1px solid var(--border); border-radius:100px; height:8px; overflow:hidden; }
+.progress-fill { height:100%; background:linear-gradient(90deg,var(--accent),var(--green)); border-radius:100px; transition:width .4s ease; }
+
+/* ── Animations ───────────────────────────────── */
+@keyframes fadeUp  { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+@keyframes spin    { to{transform:rotate(360deg)} }
+@keyframes pulse   { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+.anim-up   { animation:fadeUp  .4s ease both; }
+.anim-in   { animation:fadeIn  .3s ease both; }
+.anim-pulse{ animation:pulse   2s  ease infinite; }
+
+/* ── Spinner ──────────────────────────────────── */
+.spinner {
+  width:20px; height:20px; border-radius:50%;
+  border:2px solid var(--border); border-top-color:var(--accent);
+  animation:spin .8s linear infinite; flex-shrink:0;
+}
+
+/* ── Table ────────────────────────────────────── */
+.tbl { width:100%; border-collapse:collapse; }
+.tbl th { padding:12px 18px; text-align:left; font-size:11px; color:var(--text2); font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.5px; border-bottom:1px solid var(--border); background:var(--surf2); }
+.tbl td { padding:13px 18px; font-size:13px; border-bottom:1px solid rgba(30,40,71,.4); vertical-align:middle; }
+.tbl tr:last-child td { border-bottom:none; }
+.tbl tr:hover td { background:rgba(255,255,255,.02); }
+
+/* ── Divider ──────────────────────────────────── */
+.divider { display:flex; align-items:center; gap:12px; color:var(--muted); font-size:12px; }
+.divider::before,.divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── Dropzone ─────────────────────────────────── */
+.dropzone {
+  border:2px dashed var(--border); border-radius:var(--r);
+  padding:40px 24px; text-align:center; cursor:pointer; transition:all .2s;
+}
+.dropzone:hover,.dropzone.drag { border-color:var(--accent); background:rgba(79,142,255,.03); }
+.dropzone.drag { box-shadow:0 0 0 4px rgba(79,142,255,.1); }
