@@ -1,6 +1,3 @@
-# 🔐 CryptX — Multimedia Encryption System
-### Team CryptX · CYBER-IV-T073 · Graphic Era University
-
 A full-stack web application for encrypting and decrypting images, audio, and video files using **AES-256-CBC** encryption, built with **Node.js + Express + Firebase + React**.
 
 ---
