@@ -60,20 +60,20 @@ export default function Dashboard() {
 
       {/* Stats */}
       <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 32 }}>
-        <StatCard icon="🔐" label="Encryptions"      value={stats.totalEncryptions}                      color="#4f8eff"  delay=".05s" />
-        <StatCard icon="🔓" label="Decryptions"      value={stats.totalDecryptions}                      color="#00e5b0"  delay=".1s"  />
-        <StatCard icon="📦" label="Data Processed"   value={formatSize(stats.totalBytesProcessed)}       color="#ffb340"  delay=".15s" />
-        <StatCard icon="⚡" label="Algorithm"        value="AES-256"                                      color="#a78bfa"  delay=".2s"  />
+        <StatCard icon="" label="Encryptions"      value={stats.totalEncryptions}                      color="#4f8eff"  delay=".05s" />
+        <StatCard icon="" label="Decryptions"      value={stats.totalDecryptions}                      color="#00e5b0"  delay=".1s"  />
+        <StatCard icon="" label="Data Processed"   value={formatSize(stats.totalBytesProcessed)}       color="#ffb340"  delay=".15s" />
+        <StatCard icon="" label="Algorithm"        value="AES-256"                                      color="#a78bfa"  delay=".2s"  />
       </div>
 
       {/* Quick actions */}
       <div style={{ marginBottom: 32 }}>
         <h2 style={{ fontSize: 14, color: "var(--text2)", letterSpacing: 1, textTransform: "uppercase", fontFamily: "'JetBrains Mono',monospace", marginBottom: 16 }}>Quick Actions</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16 }}>
-          <QuickAction to="/encrypt" icon="🖼️" label="Encrypt Image"  desc="JPG, PNG, GIF, WebP, BMP…" color="#4f8eff" />
-          <QuickAction to="/encrypt" icon="🎵" label="Encrypt Audio"  desc="MP3, WAV, OGG, FLAC, AAC…" color="#00e5b0" />
-          <QuickAction to="/encrypt" icon="🎬" label="Encrypt Video"  desc="MP4, AVI, MOV, MKV, WebM…" color="#ffb340" />
-          <QuickAction to="/decrypt" icon="🔓" label="Decrypt File"   desc="Restore any .enc file"      color="#a78bfa" />
+          <QuickAction to="/encrypt" icon="" label="Encrypt Image"  desc="JPG, PNG, GIF, WebP, BMP…" color="#4f8eff" />
+          <QuickAction to="/encrypt" icon="" label="Encrypt Audio"  desc="MP3, WAV, OGG, FLAC, AAC…" color="#00e5b0" />
+          <QuickAction to="/encrypt" icon="" label="Encrypt Video"  desc="MP4, AVI, MOV, MKV, WebM…" color="#ffb340" />
+          <QuickAction to="/decrypt" icon="" label="Decrypt File"   desc="Restore any .enc file"      color="#a78bfa" />
         </div>
       </div>
 
