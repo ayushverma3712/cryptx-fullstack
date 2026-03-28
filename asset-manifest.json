@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cryptx-fullstack/static/css/main.aeac1e6c.css",
+    "main.js": "/cryptx-fullstack/static/js/main.c532f419.js",
+    "index.html": "/cryptx-fullstack/index.html",
+    "main.aeac1e6c.css.map": "/cryptx-fullstack/static/css/main.aeac1e6c.css.map",
+    "main.c532f419.js.map": "/cryptx-fullstack/static/js/main.c532f419.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aeac1e6c.css",
+    "static/js/main.c532f419.js"
+  ]
+}
